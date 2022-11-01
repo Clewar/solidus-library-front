@@ -3,16 +3,21 @@ import CrudTable from '../components/crudtable';
 import styles from '../styles/Home.module.css'
 import BookIcon from '@mui/icons-material/Book';
 import SearchBar from '../components/searchbar';
+import { useState } from 'react';
 
 export default function Home() {
+  const [performSearch, setPerformSearch] = useState(false);
+  const handleSearch = () => {
+    setPerformSearch(!performSearch)
+  }
+
   return (
     <div className={styles.container}>
-
       <main className={styles.main}>
         <AppBarSolidus />
         <div className={styles.title}> Books Administration Panel </div>
-        <SearchBar />
-        <CrudTable />
+        <SearchBar handleSearch={handleSearch}/>
+        <CrudTable performSearch={performSearch}/>
       </main>
 
       <footer className={styles.footer}>

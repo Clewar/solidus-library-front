@@ -35,8 +35,15 @@ function AppBarSolidus() {
           display: 'flex',
           justifyContent: 'space-between'
         }}>
-          <Image src={'/../public/solidus-logo.png'} alt='solidus-logo' width={200} height={40} />
-          <Box sx={{ flexGrow: 0 }}>
+          <a
+          href="https://www.soliduscapital.io/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >
+            <Image src={'/solidus-logo.png'} alt='solidus-logo' width={200} height={40} />
+          </a>
+          <Box sx={{ flexGrow: 0, display: 'flex' }}>
+            <div style={{fontWeight: 'bold', marginRight: '20px', display: 'flex', alignItems: 'center'}}>Hint: To edit a book just doble click on it</div>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <AccountCircleIcon fontSize='large' sx={{ color: 'white'}} />
